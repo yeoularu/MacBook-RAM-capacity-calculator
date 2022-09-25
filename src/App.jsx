@@ -35,14 +35,16 @@ function Card({ name, imgUrl, getClickedData }) {
 
   return (
     <div className="card">
-      <div className="img-box">
+      <div
+        className="img-box"
+        onClick={() => {
+          getClickedData(!clicked);
+          setClicked(!clicked);
+        }}
+      >
         <img
           className="logo"
           src={imgUrl}
-          onClick={() => {
-            getClickedData(!clicked);
-            setClicked(!clicked);
-          }}
           style={clicked ? { opacity: 0.6 } : null}
         />
         {clicked ? <img className="check-mark" src={checkMark} /> : null}
