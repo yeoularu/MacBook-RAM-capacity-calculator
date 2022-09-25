@@ -16,8 +16,13 @@ function App() {
       <h2>함께 사용하는 앱 모두 선택</h2>
       <p>테스트 사이트입니다. 결과 데이터를 구매에 참고하지 마세요.</p>
       <div className="container">
-        {apps.map(({ name, imgUrl }) => (
-          <Card name={name} imgUrl={imgUrl} getClickedData={getClickedData} />
+        {apps.map(({ name, imgUrl }, index) => (
+          <Card
+            name={name}
+            imgUrl={imgUrl}
+            getClickedData={getClickedData}
+            key={index}
+          />
         ))}
       </div>
       <footer>
